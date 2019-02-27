@@ -98,7 +98,6 @@ class MapViewController: UIViewController, NSFetchedResultsControllerDelegate, U
             print("Passed!")
         }
     }
- 
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let annotation = view.annotation else {

@@ -76,7 +76,8 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectio
                 }
             }
             else {
-//               
+//
+                self.indicator.isHidden = true
                 let controller = UIAlertController()
                 controller.title = "error"
                 controller.message = "Connection failed!"

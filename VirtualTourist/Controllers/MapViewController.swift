@@ -84,12 +84,6 @@ class MapViewController: UIViewController, NSFetchedResultsControllerDelegate, U
             pins.append(pin)
         }
         mapView.showAnnotations(mapView.annotations, animated: true)
-        
-//        for pin in pins {
-//            let annotation = MKPointAnnotation()
-//            annotation.coordinate = CLLocationCoordinate2D (latitude: pin.latitude, longitude: pin.longitude)
-//            self.mapView.addAnnotation(annotation)
-//        }
     
     }
     

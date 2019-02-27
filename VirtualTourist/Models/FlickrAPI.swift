@@ -38,8 +38,8 @@ class FlickerAPI {
             Constants.FlickrParameterKeys.Extras: Constants.FlickrParameterValues.MediumURL,
             Constants.FlickrParameterKeys.Format: Constants.FlickrParameterValues.ResponseFormat,
             Constants.FlickrParameterKeys.NoJSONCallback: Constants.FlickrParameterValues.DisableJSONCallback,
-            Constants.FlickrParameterKeys.PerPage: "20"
-        ]
+            Constants.FlickrParameterKeys.PerPage: "20",
+            ]
         
         // create URL
         var components = URLComponents()
@@ -152,7 +152,8 @@ class FlickerAPI {
         
         // create session and request
         let session = URLSession.shared
-        let request = URLRequest(url: flickrURLFromParameters(methodParameters))
+        let request = URLRequest(url: flickrURLFromParameters(methodParametersWithPageNumber))
+        
         
         // create network request
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -235,8 +236,6 @@ class FlickerAPI {
         task.resume()
     }
     
-    //
-    
     static func downloadImage( imagePath:String, completionHandler: @escaping (_ imageData: Data?, _ errorString: String?) -> Void){
         let session = URLSession.shared
         let imgURL = NSURL(string: imagePath)
@@ -271,11 +270,7 @@ class FlickerAPI {
         }
         
     }
-    
-    
-    
-    
-    
+
     struct Constants {
         
         // MARK: Flickr

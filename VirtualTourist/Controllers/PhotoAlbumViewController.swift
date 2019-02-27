@@ -61,7 +61,7 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectio
     
     func getImages() {
         
-        guard ((fetchResultVC.fetchedObjects?.count) == 0) else {
+        guard (fetchResultVC.fetchedObjects?.count) == 0 else {
             indicator.isHidden = true
             collectionView.reloadData()
             return
@@ -76,13 +76,16 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectio
                 }
             }
             else {
-//
-                self.indicator.isHidden = true
+
+                DispatchQueue.main.async {
+                    self.indicator.isHidden = true
+                }
                 let controller = UIAlertController()
                 controller.title = "error"
                 controller.message = "Connection failed!"
                 
-                let okAction = UIAlertAction(title: "ok", style: UIAlertAction.Style.default) { action in self.dismiss(animated: true, completion: nil)
+                let okAction = UIAlertAction(title: "ok", style: UIAlertAction.Style.default) { action in
+                    self.dismiss(animated: true, completion: nil)
                 }
                 
                 controller.addAction(okAction)

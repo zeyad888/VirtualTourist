@@ -87,7 +87,6 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectio
                 
                 controller.addAction(okAction)
                 self.present(controller, animated: true, completion: nil)
-
             }
         }
         

@@ -76,7 +76,17 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectio
                 }
             }
             else {
-                print(error!)
+//               
+                let controller = UIAlertController()
+                controller.title = "error"
+                controller.message = "Connection failed!"
+                
+                let okAction = UIAlertAction(title: "ok", style: UIAlertAction.Style.default) { action in self.dismiss(animated: true, completion: nil)
+                }
+                
+                controller.addAction(okAction)
+                self.present(controller, animated: true, completion: nil)
+
             }
         }
         

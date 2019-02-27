@@ -27,6 +27,7 @@ class MapViewController: UIViewController, NSFetchedResultsControllerDelegate, U
         super.viewDidLoad()
         uploadFetchedPins()
         setUp()
+        mapView.delegate = self
         
     }
     
@@ -38,7 +39,7 @@ class MapViewController: UIViewController, NSFetchedResultsControllerDelegate, U
         
         fetchResultVC = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchResultVC.delegate = self
-        self.mapView.delegate = self
+//        self.mapView.delegate = self
         do {
             try fetchResultVC.performFetch()
         } catch {
